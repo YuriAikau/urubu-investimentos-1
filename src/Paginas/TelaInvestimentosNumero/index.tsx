@@ -6,9 +6,9 @@ import api from './../../services/api';
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector } from "react-redux";
-import { selectDropdown, selectCadastro, selectEntrar, selectSidebar, setSidebar, selectLinguagem } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+import { useSelector,  } from "react-redux";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar, selectLinguagem } from "../../store/pageInfoSlice";
+import { selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
 
 import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -35,12 +35,19 @@ export const TelaInvestimentoNumero = () => {
 
     const navigate = useNavigate();
 
+    const odd : {[DN:string]:number} = {
+        "DN" : 2,
+        "DC" : 8,
+        "CN" : 16,
+        "CC" : 64,
+        "MN" : 128,
+        "MC" : 1234567891011121,
+    }
+
     async function investmentHandler(e:any){
         e.preventDefault();
 
-        console.log(investmentOwner);
-
-        const odds: number = 100;
+        const odds: number = odd[betType+distribution];
 
         const investmentData = {
             selectedNumber,
@@ -51,8 +58,8 @@ export const TelaInvestimentoNumero = () => {
         }
 
         try{
-            // const diff = useSelector(selectSaldo) - value;
-            // if (diff < 0) throw new Error("Sando menor que zero!");
+            const diff = saldo - value;
+            if (diff < 0) throw new Error("Saldo insuficiente!");
 
             const investmentInfo = await api.post("/tela-investimentos", investmentData, {
                 headers: {
@@ -60,16 +67,20 @@ export const TelaInvestimentoNumero = () => {
                 }
             });
 
-            // await api.put('/profile', { balance: diff});
+            await api.put('/perfil', { balance: diff}, {
+                headers: {
+                    Authorization: investmentOwner,
+                }
+            });
+
+            dispatch(setSaldo(diff));
 
             navigate("/perfil");
         }catch(err){
-            // console.error(err);
             alert(err);
-            // alert("Houve um erro ao criar o investimento, tente novamente");
         }
     }
-    
+
     return(
         <div>
             <Header/>
@@ -119,7 +130,7 @@ export const TelaInvestimentoNumero = () => {
                                 <p>{ Contents.Investment.Value }</p>
                                 <input
                                     type="number"
-                                    min={0.00}
+                                    min={10.00}
                                     max={10000.00}
                                     step={0.01} 
                                     placeholder="0.00"
@@ -128,6 +139,7 @@ export const TelaInvestimentoNumero = () => {
                                     required
                                 />
                             </section>
+                        <p><b>Odds: {odd[betType+distribution]} x</b></p>
                             <button
                                 type="submit"
                                 className={styles.submit_btn}
@@ -145,3 +157,7 @@ export const TelaInvestimentoNumero = () => {
         </div>
     );
 }
+function dispatch(arg0: { payload: any; type: "userInfo/setSaldo"; }) {
+    throw new Error("Function not implemented.");
+}
+
