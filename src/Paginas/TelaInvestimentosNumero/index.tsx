@@ -84,7 +84,6 @@ export const TelaInvestimentoNumero = () => {
     return(
         <div>
             <Header/>
-
             <div className={styles.tela_investimentos_numero}>
                 { showSidebar && <Sidebar/> }
 
