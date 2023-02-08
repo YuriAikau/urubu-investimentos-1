@@ -149,7 +149,6 @@ export const TelaInvestimentoNumero = () => {
                     </div>
                 </div>
             </div>
-
             { showEntrar && <Entrar/> }
 			{ showCadastro && <Cadastro/> }
             { showDropdown && <LoginDropdown/> }
