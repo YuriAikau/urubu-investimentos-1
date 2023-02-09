@@ -57,7 +57,7 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
-                <p className={styles.odds_totais}>{ Contents.Investment.Proportion }: {odds}x</p>
+                <p>{ Contents.Investment.Proportion }: {odds}x</p>
                 <div className={styles.input_class}>
                     <label htmlFor="valor">{ Contents.Investment.Value }</label>
                     <div className={styles.div_com_icone}>
@@ -70,16 +70,10 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                <BotaoGenerico
-                    texto={ Contents.DoInvestment }
-                    fundo={true}
-=======
                 <button
->>>>>>> c19e6a8 (ultimas atualizacoes)
                     className={styles.botao_novo_investimento}
                 >
-                    { Content.DoInvestment }
+                    { Contents.DoInvestment }
                 </button>
             </form>
         </div>

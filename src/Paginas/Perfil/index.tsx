@@ -74,9 +74,7 @@ export const Perfil = () => {
                         investimentos={10}
                     />
                     
-                    <MeusInvestimentos
-                        investimentos={investimentos}
-                    />
+                    <MeusInvestimentos />
                 </section>
             </main> 
             

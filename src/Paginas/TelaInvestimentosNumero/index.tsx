@@ -6,9 +6,9 @@ import api from './../../services/api';
 import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
-import { useSelector,  } from "react-redux";
-import { selectDropdown, selectCadastro, selectEntrar, selectSidebar, selectLinguagem } from "../../store/pageInfoSlice";
-import { selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar,  selectLinguagem } from "../../store/pageInfoSlice";
+import { adicionaInvestimento, selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
 
 import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -74,6 +74,7 @@ export const TelaInvestimentoNumero = () => {
             });
 
             dispatch(setSaldo(diff));
+            dispatch(adicionaInvestimento(investmentData))
 
             navigate("/perfil");
         }catch(err){
