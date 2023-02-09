@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-import { BotaoGenerico } from "../";
-
 import { BsCreditCard } from "react-icons/bs";
 import { BsFillCaretDownFill } from "react-icons/bs";
 
@@ -72,11 +70,17 @@ export const NovoInvestimento = () => {
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <BotaoGenerico
                     texto={ Contents.DoInvestment }
                     fundo={true}
+=======
+                <button
+>>>>>>> c19e6a8 (ultimas atualizacoes)
                     className={styles.botao_novo_investimento}
-                />
+                >
+                    { Content.DoInvestment }
+                </button>
             </form>
         </div>
     );

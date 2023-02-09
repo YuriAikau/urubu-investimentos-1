@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+import { useState } from "react";
+
+>>>>>>> c19e6a8 (ultimas atualizacoes)
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
 
 import styles from "./index.module.css";
