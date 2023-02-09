@@ -39,7 +39,7 @@ export const MeusInvestimentos = (props: propsType) => {
                 <h3>{ Contents.Investment }</h3>
                 
                 <div className={styles.div_investimentos}>
-                    {investimentos.map((investimento, index) => {
+                    {[...investimentos].reverse().map((investimento, index) => {
                         const {
                             betType,
                             distribution,
