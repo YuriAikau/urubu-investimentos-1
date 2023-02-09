@@ -31,8 +31,7 @@ export const Inicial = () => {
     const [ games, setGames ] = useState(jogosIniciais);
 
     useEffect(() => {
-        console.log("chamou useEffect");
-        api.get('/').then((request) => {console.log(request); setGames(request.data.reverse())});
+        api.get('/').then((request) => {setGames(request.data.reverse())});
     }, []);
 
     const showDropdown = useSelector(selectDropdown);
@@ -56,7 +55,7 @@ export const Inicial = () => {
                 milhares={[games[0].number1, games[0].number2, games[0].number3, games[0].number4]}
             />
 
-            <Searchbar />
+            <Searchbar placeholder="Procure investimentos passados"/>
 
             <div className={styles.resultados_anteriores}>
 
