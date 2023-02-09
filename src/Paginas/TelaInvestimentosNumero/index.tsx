@@ -74,7 +74,7 @@ export const TelaInvestimentoNumero = () => {
             });
 
             dispatch(setSaldo(diff));
-            dispatch(adicionaInvestimento(investmentData))
+            //dispatch(adicionaInvestimento(investmentData))
 
             navigate("/perfil");
         }catch(err){
