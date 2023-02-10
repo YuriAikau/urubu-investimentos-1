@@ -1,5 +1,4 @@
 import { Header, ProximoResultado, Resultado, Sidebar } from "../../Componentes";
-
 import styles from "./index.module.css";
 import { selectDropdown, selectEntrar, selectCadastro, selectSidebar } from "../../store/pageInfoSlice";
 import { Entrar } from "../../Popups";

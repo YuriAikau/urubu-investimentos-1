@@ -1,5 +1,4 @@
 import { FaRegUser, FaMoneyCheckAlt } from "react-icons/fa";
-
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Components/CardPerfil.json"
 import { useState } from "react";

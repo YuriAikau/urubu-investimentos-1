@@ -5,12 +5,12 @@ import api from '../../services/api';
 import { Header, Sidebar, CardPerfil, MeusInvestimentos } from "../../Componentes";
 import { Cadastro, Entrar } from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
-import { useSelector, useDispatch } from "react-redux";
-import { selectLogin, selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
+
+import { useSelector } from "react-redux";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar } from "../../store/pageInfoSlice";
 import { selectInvestimentos, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
 
 import styles from "./index.module.css";
-import { investimento } from "../../Componentes/MeusInvestimentos/index.module.css";
 
 interface investimentsType {
     investimentId: string;
@@ -47,7 +47,6 @@ export const Perfil = () => {
         }).then((response) => { setInvestments(response.data) });
     }, []);
 
-    const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
@@ -56,8 +55,6 @@ export const Perfil = () => {
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
     const investimentos = useSelector(selectInvestimentos)
-    
-    const dispatch = useDispatch();
 
 	return (
 		<div>
@@ -69,7 +66,7 @@ export const Perfil = () => {
                     <CardPerfil
                         nome={nomeUsuario}
                         saldo={saldo}
-                        investimentos={10}
+                        investimentos={investimentos.length}
                     />
                     
                     <MeusInvestimentos />

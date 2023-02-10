@@ -7,8 +7,8 @@ import { Header, Sidebar, CardPerfil } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector, useDispatch } from "react-redux";
-import { selectDropdown, selectCadastro, selectEntrar, selectSidebar,  selectLinguagem } from "../../store/pageInfoSlice";
-import { adicionaInvestimento, selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
+import { selectDropdown, selectCadastro, selectEntrar, selectSidebar, selectLinguagem } from "../../store/pageInfoSlice";
+import { adicionaInvestimento, selectInvestimentos, selectNomeUsuario, selectSaldo, setSaldo } from "../../store/userInfoSlice";
 
 import CONTENTS from "../../Content/Pages/TelaInvestimentosNumero.json"
 import styles from './index.module.css';
@@ -25,6 +25,7 @@ export const TelaInvestimentoNumero = () => {
     
     const nomeUsuario = useSelector(selectNomeUsuario);
     const saldo = useSelector(selectSaldo);
+    const investimentos = useSelector(selectInvestimentos);
 
     const Contents = CONTENTS[useSelector(selectLinguagem)];
 
@@ -61,7 +62,7 @@ export const TelaInvestimentoNumero = () => {
             const diff = saldo - value;
             if (diff < 0) throw new Error("Saldo insuficiente!");
 
-            const investmentInfo = await api.post("/tela-investimentos", investmentData, {
+            await api.post("/tela-investimentos", investmentData, {
                 headers: {
                     Authorization: investmentOwner,
                 }
@@ -92,7 +93,7 @@ export const TelaInvestimentoNumero = () => {
                     <CardPerfil
                         nome={nomeUsuario}
                         saldo={saldo}
-                        investimentos={0}
+                        investimentos={investimentos.length}
                     />
 
                     <div className={styles.form}>
@@ -105,7 +106,7 @@ export const TelaInvestimentoNumero = () => {
                                     onChange={e => setBetType(e.target.value)}
                                     required
                                 >
-                                    { Contents.Investment.Types.map((element) => {return ( <option value={ element.charAt(0) }>{ element }</option>)})}
+                                    { Contents.Investment.Types.map((element, index) => {return ( <option value={ element.charAt(0) } key={index}>{ element }</option>)})}
                                 </select>
                                 
                                 <p>{ Contents.Investment.Number }</p>
@@ -124,7 +125,7 @@ export const TelaInvestimentoNumero = () => {
                                     onChange={e => setDistribution(e.target.value)}
                                     required
                                 >
-                                    { Contents.Investment.Distributions.map((element) => { return ( <option value={ element.charAt(0) }>{ element }</option>)})}
+                                    { Contents.Investment.Distributions.map((element, index) => { return ( <option value={ element.charAt(0) } key={index}>{ element }</option>)})}
                                 </select>
 
                                 <p>{ Contents.Investment.Value }</p>

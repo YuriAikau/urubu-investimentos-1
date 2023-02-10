@@ -3,10 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { Logo } from '../../Componentes';
 import { CgClose } from 'react-icons/cg';
 
+<<<<<<< HEAD
 import { useSelector, useDispatch } from "react-redux";
 import { setCadastro, setEntrar } from "../../store/pageInfoSlice";
 import CONTENTS from '../../Content/Popups/Cadastro.json'
 import { selectLinguagem } from "../../store/pageInfoSlice";
+=======
+import { useDispatch } from "react-redux";
+import { setCadastro, setEntrar } from "../../store/pageInfoSlice";
+>>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 
 import styles from "./index.module.css"
 import api from "../../services/api";
@@ -16,7 +21,10 @@ export const Cadastro = () => {
     const [senha, setSenha] = useState("");
     const [idade, setIdade] = useState("");
     const navigate = useNavigate();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
     const dispatch = useDispatch();
     const Contents = CONTENTS[useSelector(selectLinguagem)];
 
@@ -98,7 +106,7 @@ export const Cadastro = () => {
                         >
                             { Contents.Terms[1] }
                         </b>
-                        
+                        .
                     </p>
 
                     <button type="submit">{ Contents.Begin } &rarr;</button>

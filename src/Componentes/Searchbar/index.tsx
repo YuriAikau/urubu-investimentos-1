@@ -1,6 +1,6 @@
 import { HiMagnifyingGlass } from "react-icons/hi2";
 
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setSearch } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";

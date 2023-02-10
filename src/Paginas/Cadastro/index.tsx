@@ -3,8 +3,13 @@ import api from './../../services/api';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 import { useSelector, useDispatch } from "react-redux";
+<<<<<<< HEAD
 import { loga, selectLinguagem, selectLogin } from "../../store/pageInfoSlice";
 import { setNomeUsuario, setSaldo, selectNomeUsuario, selectSaldo } from "../../store/userInfoSlice";
+=======
+import { loga, selectLogin } from "../../store/pageInfoSlice";
+import { setNomeUsuario, setSaldo } from "../../store/userInfoSlice";
+>>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 
 import { Header, Sidebar } from '../../Componentes';
 import { FiTriangle, FiCalendar } from 'react-icons/fi';

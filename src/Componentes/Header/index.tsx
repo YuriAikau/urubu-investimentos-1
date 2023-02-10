@@ -1,7 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
+<<<<<<< HEAD
 import { setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar, selectLinguagem, setLinguagem } from "../../store/pageInfoSlice";
 import { selectNomeUsuario } from "../../store/userInfoSlice";
+=======
+import { setDropdown, setSidebar, selectLogin, selectDropdown, selectCadastro, selectEntrar, setCadastro, setEntrar, selectSidebar } from "../../store/pageInfoSlice";
+import { selectNomeUsuario } from "../../store/userInfoSlice";
+
+>>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 import { Logo } from "../";
 import { FaBars, FaRegUser } from 'react-icons/fa';
 

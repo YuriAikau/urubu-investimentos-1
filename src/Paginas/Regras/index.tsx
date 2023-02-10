@@ -2,7 +2,11 @@ import { Header, Sidebar } from "../../Componentes";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
 
 import { useSelector } from "react-redux";
+<<<<<<< HEAD
 import { selectLogin, selectDropdown, selectSidebar, selectCadastro, selectEntrar, selectLinguagem } from "../../store/pageInfoSlice";
+=======
+import { selectDropdown, selectSidebar, selectCadastro, selectEntrar } from "../../store/pageInfoSlice";
+>>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 
 import styles from "./index.module.css";
 import CONTENTS from "../../Content/Pages/Regras.json";
@@ -10,7 +14,6 @@ import { Entrar } from "../../Popups";
 import { Cadastro } from "../Cadastro";
 
 export const Regras = () => {
-	const logado = useSelector(selectLogin);
 	const showDropdown = useSelector(selectDropdown);
     const showEntrar = useSelector(selectEntrar);
     const showCadastro = useSelector(selectCadastro);
