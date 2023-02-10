@@ -3,15 +3,8 @@ import api from '../../services/api'
 import { Header, Sidebar, UltimoResultado, Searchbar, Resultado } from "../../Componentes";
 import { Cadastro, Entrar} from "../../Popups";
 import { LoginDropdown } from "../../Popups/LoginDropdown";
-<<<<<<< HEAD
 import { useSelector } from "react-redux";
 import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
-=======
-
-import { useSelector } from "react-redux";
-import { selectDropdown, selectEntrar, selectCadastro, selectSidebar, selectSearch } from "../../store/pageInfoSlice";
-
->>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 import { mapeiaNomeAnimal, mapeiaSrcAnimal } from "../../Utils/mapeiaAnimal";
 
 import styles from "./index.module.css";

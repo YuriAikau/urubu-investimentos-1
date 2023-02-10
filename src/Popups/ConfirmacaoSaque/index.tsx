@@ -3,13 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./index.module.css";
 import styles from "./index.module.css";
 import { CgClose } from "react-icons/cg";
-<<<<<<< HEAD
 import CONTENTS from '../../Content/Popups/ConfirmarSaque.json'
 import { useSelector } from "react-redux/es/hooks/useSelector";
 import { selectLinguagem } from "../../store/pageInfoSlice";
-=======
-
->>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 interface propsType {
     fechar: () => void;
 }

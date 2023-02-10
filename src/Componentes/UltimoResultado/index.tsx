@@ -5,11 +5,8 @@ import { ResultadoInfo } from "./ResultadoInfo";
 import styles from "./index.module.css";
 import { setEntrar, selectLogin, setCadastro } from "../../store/pageInfoSlice";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
 import CONTENTS from "../../Content/Components/UltimoResultado.json"
 import { selectLinguagem } from "../../store/pageInfoSlice";
-=======
->>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 
 interface propsType {
     fotoSrc: string;
@@ -25,11 +22,7 @@ export const UltimoResultado = (props: propsType) => {
 
     if(milhares === undefined)
         milhares = [""];
-<<<<<<< HEAD
-
-=======
     
->>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
     const logado = useSelector(selectLogin);
 
     const dispatch = useDispatch();

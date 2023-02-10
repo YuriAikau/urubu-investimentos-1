@@ -1,9 +1,5 @@
 import { useNavigate } from 'react-router-dom';
 
-<<<<<<< HEAD
-=======
-import { useDispatch } from "react-redux";
->>>>>>> 3ec171b (:lipstick: remocao de trechos inutilizados)
 import { desloga, setDropdown } from "../../store/pageInfoSlice";
 
 import styles from "./index.module.css";
